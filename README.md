@@ -1,33 +1,33 @@
 <h1 align="center">  📽️📥 YouTube to Cloud Uploader 🪂🌥️ </h1>
 <div align="center">
-<img src="https://github.com/dmotts/yt-to-cloud-uploader/blob/main/public/Logo-1.png" alt="logo" width="320" height="320"  />
+<img src="https://github.com/daley-mottley/yt-to-cloud-uploader/blob/main/public/Logo-1.png" alt="logo" width="320" height="320"  />
 </div>
 
 <p align="center">
-<a href="https://github.com/dmotts/yt-to-cloud-uploader/issues/new?assignees=&labels=enhancement&projects=&template=feature_request.yml&title=%5BFeature+Request%5D+">Request Feature</a>
+<a href="https://github.com/daley-mottley/yt-to-cloud-uploader/issues/new?assignees=&labels=enhancement&projects=&template=feature_request.yml&title=%5BFeature+Request%5D+">Request Feature</a>
      ·
-    <a href="https://github.com/dmotts/yt-to-cloud-uploader/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+">Report Bug</a>
+    <a href="https://github.com/daley-mottley/yt-to-cloud-uploader/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+">Report Bug</a>
  
 </p>
 
-<p align="center"><a href="https://github.com/dmotts/yt-to-cloud-uploader/blob/main/CONTRIBUTING.md">Contributing Guidelines & Code of Conduct</a></p>
+<p align="center"><a href="https://github.com/daley-mottley/yt-to-cloud-uploader/blob/main/CONTRIBUTING.md">Contributing Guidelines & Code of Conduct</a></p>
 
 <div align="center">
 <p>
 
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)
-![GitHub forks](https://img.shields.io/github/forks/dmotts/yt-to-cloud-uploader)
-![GitHub Repo stars](https://img.shields.io/github/stars/dmotts/yt-to-cloud-uploader)
-![GitHub contributors](https://img.shields.io/github/contributors/dmotts/yt-to-cloud-uploader)
-![GitHub last commit](https://img.shields.io/github/last-commit/dmotts/yt-to-cloud-uploader)
-![GitHub repo size](https://img.shields.io/github/repo-size/dmotts/yt-to-cloud-uploader)
-![GitHub total lines](https://sloc.xyz/github/dmotts/yt-to-cloud-uploader)
-![Github](https://img.shields.io/github/license/dmotts/yt-to-cloud-uploader)
-![GitHub issues](https://img.shields.io/github/issues/dmotts/yt-to-cloud-uploader)
-![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/dmotts/yt-to-cloud-uploader)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/dmotts/yt-to-cloud-uploader)
-![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/dmotts/yt-to-cloud-uploader)
+![GitHub forks](https://img.shields.io/github/forks/daley-mottley/yt-to-cloud-uploader)
+![GitHub Repo stars](https://img.shields.io/github/stars/daley-mottley/yt-to-cloud-uploader)
+![GitHub contributors](https://img.shields.io/github/contributors/daley-mottley/yt-to-cloud-uploader)
+![GitHub last commit](https://img.shields.io/github/last-commit/daley-mottley/yt-to-cloud-uploader)
+![GitHub repo size](https://img.shields.io/github/repo-size/daley-mottley/yt-to-cloud-uploader)
+![GitHub total lines](https://sloc.xyz/github/daley-mottley/yt-to-cloud-uploader)
+![Github](https://img.shields.io/github/license/daley-mottley/yt-to-cloud-uploader)
+![GitHub issues](https://img.shields.io/github/issues/daley-mottley/yt-to-cloud-uploader)
+![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/daley-mottley/yt-to-cloud-uploader)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/daley-mottley/yt-to-cloud-uploader)
+![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/daley-mottley/yt-to-cloud-uploader)
 </p>
 </div>
 
@@ -58,7 +58,7 @@ This application allows users to download YouTube videos or playlists and upload
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/dmotts/yt-to-cloud-uploader.git
+   git clone https://github.com/daley-mottley/yt-to-cloud-uploader.git
    cd yt-to-cloud-uploader
    ```
 
@@ -92,7 +92,7 @@ This application allows users to download YouTube videos or playlists and upload
 
 ## Report A Bug 🪰
 
-If you encounter any issues or have questions, feel free to [open an issue](https://github.com/dmotts/yt-to-cloud-uploader/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+) or reach out to the maintainers.
+If you encounter any issues or have questions, feel free to [open an issue](https://github.com/daley-mottley/yt-to-cloud-uploader/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+) or reach out to the maintainers.
 
 ## Contributions 🧑‍🔧👷‍♀️🏗️🏢
 
@@ -110,13 +110,13 @@ To contribute:
 
 5) Open a pull request.
 
-<p align="center" ><strong><em>Please read our <a href="https://github.com/dmotts/yt-to-cloud-uploader/blob/main/CONTRIBUTING.md" >Contributing Guidelines</a> to get started!</em></strong> 🚀</p>
+<p align="center" ><strong><em>Please read our <a href="https://github.com/daley-mottley/yt-to-cloud-uploader/blob/main/CONTRIBUTING.md" >Contributing Guidelines</a> to get started!</em></strong> 🚀</p>
 
 <h2 name="contributors" align="center">Say 'Hi' To Our Contributors!</h2>
 
 <p align="center">
-  <a href="https://github.com/dmotts">
-    <img src="https://github.com/dmotts.png" width="100" height="100" style="border-radius: 50%;" alt="dmotts"/>
+  <a href="https://github.com/daley-mottley">
+    <img src="https://github.com/daley-mottley.png" width="100" height="100" style="border-radius: 50%;" alt="daley-mottley"/>
   </a>
   <a href="https://github.com/Brijeshthummar02">
     <img src="https://github.com/Brijeshthummar02.png" width="100" height="100" style="border-radius: 50%;" alt="Brijeshthummar02"/>
