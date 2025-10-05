@@ -1,138 +1,111 @@
 # Contributing to YouTube to Cloud Uploader
 
-**TODO: Update the contributing guidelines**
-- Differentiate between frontend and backend contributions
-- Mention switch to uv
+Thanks for helping improve **YouTube to Cloud Uploader**! This guide reflects the post-#38 project structure, which separates backend and frontend work and standardizes on the [uv](https://github.com/astral-sh/uv) toolchain for Python development.
 
-Thank you for considering contributing to the **YouTube to Cloud Uploader** project! We appreciate your help in improving this application and making it more useful for everyone.
+## Quick checklist
 
-## How to Contribute
+- [ ] Search existing issues, especially the prioritized ones, before opening something new.
+- [ ] Comment on the issue you plan to tackle so we can mark it “in progress”.
+- [ ] Create a feature branch from `main` and keep your fork in sync.
+- [ ] Run the relevant tests/linters (see below) and update docs as needed.
+- [ ] Reference the issue number in your pull request title or description, e.g. `Fixes #45`.
 
-Follow these steps to contribute to the project:
+## Project structure overview
 
-### 1. Fork the Repository
-
-Click the "Fork" button on the top right of the repository to create a copy in your own GitHub account.
-
-Clone your fork to your local machine:
-
-```bash
-git clone https://github.com/dmotts/yt-to-cloud-uploader.git
-cd yt-to-cloud-uploader
+```text
+.
+├── backend/        # FastAPI service (yt-dlp integration, Google Drive upload)
+├── frontend/       # Web client (landing/login flows, currently being built out)
+├── docs/           # Project documentation (architecture, endpoints, pages)
+└── public/         # Static assets and SVG diagrams
 ```
 
-### 2. Create a Branch
+Most active development happens inside `backend/` right now. Frontend scaffolding is intentionally lightweight and will evolve; check open issues or discussions before introducing new frameworks or build tools.
 
-Create a new branch for your feature, bug fix, or improvement:
+## Getting started
 
- ```bash
-   git checkout -b feature/my-new-feature
-   ```
-
-### 3. Make Your Changes
-
-Make sure to test your changes thoroughly.
-
-• If you are adding new features, update the documentation (README.md).
-• Follow the code style guidelines used in the project.
-• Ensure that your code works with Python 3.x.
-
-### 4. Commit Your Changes
-
-Once you’re satisfied with your work, commit your changes with a meaningful message:
-
- ```bash
-   git commit -m "Add my awesome new feature"
-
-   ```
-
-### 5. Push to GitHub
-
-Push your branch to GitHub:
-
- ```bash
-     git push origin feature/my-new-feature
-
-   ```
-
-### 6. Submit a Pull Request (PR)
-
-Submit a pull request through GitHub:
-
-1. Go to the repository on GitHub and click on the "Pull requests" tab.
-2. Click on the "New pull request" button.
-3. Select your branch from the dropdown menu and compare it with the main branch.
-4. Provide a description of your changes and click on "Create pull request."
-
-## Please ensure that
-
-• You have followed the steps outlined in this guide.
-• Your code adheres to the existing codebase.
-• You have tested the functionality thoroughly.
-
-We’ll review your PR as soon as possible.
-
-### Reporting Issues
-
-If you encounter a bug, performance issue, or have a feature request, feel free to create an issue. Please provide the following information when submitting an issue:
-
-• A clear title and description.
-• Steps to reproduce the issue (if applicable).
-• Any error logs or screenshots to help identify the problem.
-
-### Code Style
-
-Please adhere to the following code style guidelines:
-
-• Use clear, descriptive variable and function names.
-• Use consistent indentation and whitespace (4 spaces per indentation level).
-• Follow the existing structure and organization of the codebase.
-
-### Development Setup
-
-1. Clone the repository and navigate to the project directory:
+1. **Fork & clone**
 
    ```bash
-   git clone https://github.com/dmotts/yt-to-cloud-uploader.git
+   git clone https://github.com/<your-username>/yt-to-cloud-uploader.git
    cd yt-to-cloud-uploader
-
+   git remote add upstream https://github.com/Manjunath3155/yt-to-cloud-uploader.git
    ```
 
-2. Install the required dependencies by running:
+1. **Install uv (once per machine)**
 
    ```bash
-   pip install -r requirements.txt
-
+   curl -LsSf https://astral.sh/uv/install.sh | sh
    ```
 
-3. Configure OAuth 2.0 credentials:
+   On Windows PowerShell, run the installer from the docs: <https://github.com/astral-sh/uv#installation>.
 
-  • Place your client_id.json and token.json files in the project directory.
-  • Ensure your Google Cloud Project has the Drive API enabled.
-
-Run the application:
+1. **Sync backend dependencies**
 
    ```bash
-   streamlit run main.py
+   cd backend
+   uv sync
    ```
 
-Access the app in your browser at <http://localhost:8501>.
+   This creates a `.venv/` managed by uv and installs everything defined in `pyproject.toml` / `uv.lock`.
 
-** Pull Request Guidelines
+1. **Run the FastAPI server**
 
-When submitting a pull request, make sure to:
+   ```bash
+   uv run uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+   ```
 
-• Include a clear description of your changes.
-• Reference any related issue numbers (e.g., Fixes #123).
-• Add or update tests if necessary.
-• Update documentation if you’ve introduced new features or significant changes.
+1. **Optional: legacy Streamlit UI**
 
-** Feature Requests
+   The historical Streamlit entrypoint is still available at the repo root. If you need it for regression work:
 
-We welcome feature requests! If you have an idea for a new feature, feel free to open an issue with the tag "feature request" and describe your idea. We’ll discuss it with the community and decide on the next steps.
+   ```bash
+   uv run streamlit run backend/app/main.py
+   ```
 
-### License
+## Backend contributions
 
-By contributing to this repository, you agree that your contributions will be licensed under the MIT License.
+- Follow FastAPI best practices—route handlers live in `backend/app/`.
+- Prefer dependency-injected services and keep business logic out of route functions when possible.
+- Add or update tests in `backend/tests/` (create the folder if your change introduces the first test for a module).
+- Use uv for all tasks:
 
-Thank you again for your interest in improving YouTube to Cloud Uploader. We look forward to your contributions!
+  ```bash
+  uv run pytest
+  uv run ruff check
+  uv run ruff format
+  ```
+
+- If you introduce new dependencies, add them to `pyproject.toml` (not `requirements.txt`) and regenerate the lockfile via `uv lock --upgrade`.
+- Secrets (Google OAuth credentials, cloud tokens, etc.) must never be committed. Reference them through environment variables (e.g., `GOOGLE_CLIENT_SECRET_PATH`) and document any new keys in `README.md`.
+
+## Frontend contributions
+
+- Coordinate in the issue tracker before choosing a stack—the team is converging on a modern SPA (Vite/React or similar) but the final decision is tracked publicly.
+- Document new scripts and package manager usage (pnpm/npm/yarn) in `frontend/README.md` if you add them.
+- Keep the Dockerfile in sync with whichever tooling you introduce. If you’re not touching Docker, leave it as-is.
+
+## Documentation updates
+
+- Update `docs/` when you change endpoints, authentication flows, environment variables, or UI pages.
+- The main `README.md` is the landing spot for end users. Keep it concise; move deep details into the docs folder if needed.
+- When altering architecture diagrams, commit the source assets (Figma/Draw.io exports) if allowed by licensing.
+
+## Git & branching workflow
+
+1. Create a descriptive branch name, e.g., `backend/add-drive-folder-sync` or `docs/update-oauth-instructions`.
+2. Make focused commits with meaningful messages (imperative mood preferred).
+3. Rebase on `upstream/main` before opening a PR to minimize merge conflicts.
+4. Fill out the PR template, include screenshots or terminal output as proof of successful tests, and list outstanding follow-ups if any.
+
+## Issue reporting & feature requests
+
+- Use the provided issue templates (`Bug report`, `Feature request`).
+- Include reproduction steps, logs, and expected vs. actual behaviour for bugs.
+- For features, describe the user problem first; proposed implementations can come later in the thread.
+
+## Code of Conduct & licensing
+
+Participation in this project is governed by the [Code of Conduct](CODE_OF_CONDUCT.md). By submitting a contribution, you agree that it will be licensed under the repository’s MIT License.
+
+Thanks again for contributing—see you in the pull requests! ✨
