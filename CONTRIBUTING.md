@@ -29,7 +29,7 @@ Most active development happens inside `backend/` right now. Frontend scaffoldin
    ```bash
    git clone https://github.com/<your-username>/yt-to-cloud-uploader.git
    cd yt-to-cloud-uploader
-   git remote add upstream https://github.com/Manjunath3155/yt-to-cloud-uploader.git
+   git remote add upstream https://github.com/daley-mottley/yt-to-cloud-uploader.git
    ```
 
 1. **Install uv (once per machine)**
