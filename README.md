@@ -139,7 +139,7 @@ To contribute:
   <a href="https://github.com/RedLordezh7Venom">
     <img src="https://github.com/RedLordezh7Venom.png" width="100" height="100" style="border-radius: 50%;" alt="RedLordezh7Venom" />
   </a>
-  <a href="Manjunath3155">
+  <a href="https://github.com/Manjunath3155">
     <img src="https://github.com/Manjunath3155.png" width="100" height="100" style="border-radius: 50%;" alt="Manjunath3155" />
   </a>
      
